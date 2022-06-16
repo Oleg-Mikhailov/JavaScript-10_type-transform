@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <title>Students</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/students.css">
+  <script defer src="./students.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      startStudentsApp(document.getElementById('students-app'));
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div id="students-app" class="container"></div>
+      <nav class="nav">
+
+
+        <ul class="column list-reset">
+          <li class="column-rect">
+            <input type="text" class="column-rect" id="filterFIO" placeholder="фильтр">
+          </li>
+          <li class="column-rect">
+            <input type="text" class="column-rect" id="filterFaculty" placeholder="фильтр">
+          </li>
+          <li class="column-rect">
+            <input type="text" class="column-rect" id="filterDate" placeholder="фильтр">
+          </li>
+          <li class="column-rect">
+            <input type="text" class="column-rect" id="filterCourse" placeholder="фильтр">
+          </li>
+          </ul>
+
+
+        <ul class="column list-reset">
+          <li class="col-type">
+            <button class="button" id="button-FIO">
+              ФИО студента
+            </button>
+          </li>
+          <li class="col-type">
+            <button class="button" id="button-Faculty">
+              Факультет
+            </button>
+          </li>
+          <li class="col-type">
+            <button class="button" id="button-Date">
+              ДР и возраст
+            </button>
+          </li>
+          <li class="col-type">
+            <button class="button" id="button-Course">
+              Годы обучения и номер курса
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <ul class="column list-reset">
+        <li class="add-column-rect" id="FIO">
+        </li>
+        <li class="add-column-rect" id="Faculty">
+        </li>
+        <li class="add-column-rect" id="Date">
+        </li>
+        <li class="add-column-rect" id="Course">
+        </li>
+      </ul>
+      <ul class="column list-reset">
+      <li>
+        <input type="text" class="add-column-rect" id="inputFIO" placeholder = "введите полное имя студента">
+      </li>
+      <li>
+        <input type="text" class="add-column-rect" id="inputFaculty" placeholder = "введите факультет">
+      </li>
+      <li>
+        <input type="date" class="add-column-rect" id="inputDate" name="DR" min="1900-01-01" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+      </li>
+      <li>
+        <input type="text" class="add-column-rect" id="inputCourse" placeholder = "введите год начала обучения">
+      </li>
+      </ul>
+      <p id = "FIOErrorMessage" class = "error-text"></p>
+      <p id = "FacultyErrorMessage" class = "error-text"></p>
+      <p id = "DateErrorMessage" class = "error-text"></p>
+      <p id = "CourseErrorMessage" class = "error-text"></p>
+      <button class="button" id = "addStudentButton">
+        Добавить студента
+      </button>
+    </main>
+  </div>
+</body>
+
+</html>
